@@ -36,4 +36,20 @@ const findMaxConsecutiveOnes = (nums) => {
     return largest
 };
 
+// const findMaxConsecutiveOnes = (nums) => {
+//     let count = []
+//     let largest = []
+//     for (let i = 0; i < nums.length; i++){
+//         if(nums[i] === 1){
+//             count.push(nums[i])
+//             if(count.length>largest.length){
+//                 largest = count
+//             }
+//         }else{
+//             count = []
+//         }
+//     }
+//     return largest.length
+// };
+
 findMaxConsecutiveOnes(nums);

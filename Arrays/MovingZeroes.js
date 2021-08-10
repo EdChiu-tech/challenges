@@ -20,34 +20,36 @@
 //    Show Hint #1  
 //    Show Hint #2  
 
-nums = [0, 0, 0, 1, 0]
-
-// const moveZeroes = (nums) => {
-//     let zeroIndex = []
-//     for (i = 0; i < nums.length; i++) {
-//         if (nums[i] === 0) {
-//             zeroIndex.push(i)
-//         }
-//     }
-//     for (i = 0; i < nums.length; i++) {
-//             nums.splice((zeroIndex[i], 1))
-//             nums.push(0)
-//     }
-//     return nums
-// };
+nums = [0,1,0,3,12]
 
 const moveZeroes = (nums) => {
-    let indexes = []
-    nums.forEach((item, index) => {
-        if (item === 0 ){
-            indexes.push(index)
+    let zeroIndex = []
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
+            zeroIndex.push(i)
         }
-    })
-    indexes.forEach((item, index) => {
-        nums.splice((item-index), 1)
-        nums.push(0)
-    })
+    }
+    console.log(zeroIndex)
+    for (i = 0; i < zeroIndex.length; i++) {
+            nums.splice(zeroIndex[i]-i, 1)
+            nums.push(0)
+    }
     return nums
 };
+
+// const moveZeroes = (nums) => {
+//     let indexes = []
+//     nums.forEach((item, index) => {
+//         if (item === 0 ){
+//             indexes.push(index)
+//         }
+//     })
+//     console.log(indexes)
+//     indexes.forEach((item, index) => {
+//         nums.splice((item-index), 1)
+//         nums.push(0)
+//     })
+//     return nums
+// };
 
 console.log(moveZeroes(nums))
